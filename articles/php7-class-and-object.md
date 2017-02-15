@@ -102,7 +102,7 @@ echo memory_get_usage() - $m . "\n"; /* 912 bytes */
 对于 PHP 而言，实现继承的关键点就在于将父类的属性和方法复制给子类。这个过程被放在了编译阶段。具体实现方法可以查看 Zend/zend_inheritance.c 中的 `zend_do_inheritance()` 函数。
 
 ```
-ZEND_API void zend_do_inheritance(zend_class_entry *ce, zend_class_entry *parent_ce) /* {{{ */
+ZEND_API void zend_do_inheritance(zend_class_entry *ce, zend_class_entry *parent_ce)
 {
 	zend_property_info *property_info;
 	zend_function *func;
@@ -126,7 +126,7 @@ ZEND_API void zend_do_inheritance(zend_class_entry *ce, zend_class_entry *parent
 			zend_error_noreturn(E_COMPILE_ERROR, "Class %s may not inherit from final class (%s)", ZSTR_VAL(ce->name), ZSTR_VAL(parent_ce->name));
 		}
 	}
-	
+
 	...
 }
 ```
@@ -140,13 +140,13 @@ ZEND_API void zend_do_inheritance(zend_class_entry *ce, zend_class_entry *parent
 interface Animal {
     public function run();
 }
- 
+
 class Dog implements Animal {
     public function run() {
         echo 'dog run';
     }
 }
- 
+
 class Cat implements Animal{
     public function run() {
         echo 'cat run';
@@ -155,11 +155,11 @@ class Cat implements Animal{
 
 class Context {
     private $_animal;
- 
+
     public function __construct(Animal $animal) {
         $this->_animal = $animal;
     }
- 
+
     public function run() {
         $this->_animal->run();
     }

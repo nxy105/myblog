@@ -382,6 +382,6 @@ PHP 向我们展示了，如何用面向过程的语言实现一门支持类与�
 
 ## 参考文献
 
-http://jpauli.github.io/2015/03/24/zoom-on-php-objects.html
+[Zoom on PHP objects and classes (PHP 5)](http://jpauli.github.io/2015/03/24/zoom-on-php-objects.html)
 
-http://www.php-internals.com/book/?p=chapt05/05-04-class-inherit-abstract
+[类的继承，多态及抽象类](http://www.php-internals.com/book/?p=chapt05/05-04-class-inherit-abstract)
